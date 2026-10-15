@@ -19,19 +19,18 @@ def link_records(anon_df, aux_df):
     containing ONLY uniquely matched records.
     """
 
-    results = pd.DataFrame(columns=["anon_id", "matched_name"])
+    results = []
 
     for age, zip3, gender, id in zip(anon_df["age"], anon_df["zip3"], anon_df["gender"], anon_df["anon_id"]):
-        for a, z, g, name in zip(aux_df["age"], aux_df["zip3"], aux_df["gender"], aux_df["name"]):
             
-            if ((age == a) and (zip3 == z) and (gender == g)):
-            
-                new_row = pd.DataFrame([{"anon_id": id, "matched_name": name}])
-                results = pd.concat([results, new_row], ignore_index=True)
+        matched = aux_df[(aux_df["age"] == age) & (aux_df["zip3"] == zip3) & (aux_df["gender"] == gender)]
 
-                break
+        if len(matched) == 1:
+            results.append({"anon_id": id, "matched_name": matched.iloc[0]["name"]})
 
-    return results
+    list = pd.DataFrame(results, columns=["anon_id", "matched_name"])
+
+    return list
 
 
 def deanonymization_rate(matches_df, anon_df):
