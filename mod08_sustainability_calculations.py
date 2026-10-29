@@ -11,6 +11,8 @@ def compute_energy_kwh(jobs_df, power_per_core_kw=POWER_PER_CORE_KW):
     df["energy_kwh"] = ( 
         # put energy calculation here
 
+        df['cpu_cores'] * df['runtime_hours'] * power_per_core_kw
+
     )
     return df
 
