@@ -17,5 +17,5 @@ Your goal is to connect anonymized data back to its source data and check the ma
 ### Module 08: Sustainability in Computing
 You will be given a toy dataset and have the opportunity to explore the potential effects of choosing sustainable energy sources to perform computations. You'll code the energy calculation in "sustainability calculations" script, and then you can review the results of various decisions in the "check calculations" notebook. 
 
-##Person AI Ethics Statement
+## Person AI Ethics Statement
 Chapter 5 of Ethical Machines explains how ethics statements should be concrete and specific, which differs from the vague promises typically seen. I think that having a department within a company whose focus is on AI management would keep companies accountable for their usage. I think businesses should be specific about will and will not use AI for in the future to promote transparency. Because of the fear that surrounds AI in regards to privacy and rogue agents, I also think that companies should have well thought out, written plans for a scenario where they need to shut down, or at least partially stop, the live AI.
